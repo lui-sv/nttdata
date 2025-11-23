@@ -37,7 +37,7 @@ pipeline {
 
         stage('Análisis SonarQube') {
             steps {
-                withCredentials([string(credentialsId: 'sonar-token', variable: 'SONAR_TOKEN')]) {
+                withCredentials([string(credentialsId: 'NTTDATA', variable: 'SONAR_TOKEN')]) {
                     bat """
                     pysonar ^
                       --sonar-host-url=%SONAR_HOST_URL% ^
