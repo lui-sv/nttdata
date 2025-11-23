@@ -41,8 +41,8 @@ pipeline {
                     bat """
                     "%PYSONAR%" ^
                       --sonar-host-url=http://localhost:9000 ^
-                      --sonar-token=sqp_ec5e02d219969d0e5efd6efcd154a129531c0597 ^
-                      --sonar-project-key=****
+                      --sonar-token=*** ^
+                      --sonar-project-key=qp_ec5e02d219969d0e5efd6efcd154a129531c0597
                     """
                 }
             }
