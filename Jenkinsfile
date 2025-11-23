@@ -39,7 +39,7 @@ pipeline {
             steps {
                 withCredentials([string(credentialsId: 'sonar-token', variable: 'SONAR_TOKEN')]) {
                     bat """
-                    pysonar ^
+                    nttdata ^
                       --sonar-host-url=%SONAR_HOST_URL% ^
                       --sonar-token=%SONAR_TOKEN% ^
                       --sonar-project-key=%SONAR_PROJECT_KEY%
