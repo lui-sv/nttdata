@@ -5,7 +5,7 @@ pipeline {
         // Ajusta si en tu agente se usa "py" en vez de "python"
         PYTHON  = "C:/Users/Luis/AppData/Local/Programs/Python/Python310/python.exe"
         PYSONAR = "C:/Users/Luis/AppData/Local/Programs/Python/Python310/Scripts/pysonar.exe"
-        SONAR_PROJECT_KEY = "qp_ec5e02d219969d0e5efd6efcd154a129531c0597"
+        SONAR_PROJECT_KEY = "sqp_f1866ba842b7aee1d07d8c1e29110087151b01a8"
     }
 
     stages {
@@ -41,7 +41,7 @@ pipeline {
                     bat """
                     "%PYSONAR%" ^
                       --sonar-host-url=http://localhost:9000 ^
-                      --sonar-token=sqp_ec5e02d219969d0e5efd6efcd154a129531c0597 ^
+                      --sonar-token=sqp_f1866ba842b7aee1d07d8c1e29110087151b01a8 ^
                       --sonar-project-key=qp_ec5e02d219969d0e5efd6efcd154a129531c0597
                     """
                 }
