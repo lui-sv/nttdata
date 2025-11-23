@@ -39,8 +39,8 @@ pipeline {
             steps {
                 withCredentials([string(credentialsId: 'sonar-token', variable: 'SONAR_TOKEN')]) {
                     bat """
-                    pysonar ^
-                      --sonar-host-url=http://localhost:9000
+                    "%PYSONAR%" ^
+                      --sonar-host-url=http://localhost:9000 ^
                       --sonar-token=**** ^
                       --sonar-project-key=sqp_ec5e02d219969d0e5efd6efcd154a129531c0597
                     """
