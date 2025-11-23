@@ -30,7 +30,7 @@ pipeline {
             steps {
                 // Sólo verifica que el código Python compile
                 bat """
-                %PYTHON% -m compileall app.py
+                %PYTHON% -m compileall nttdata.py
                 """
             }
         }
@@ -39,10 +39,10 @@ pipeline {
             steps {
                 withCredentials([string(credentialsId: 'sonar-token', variable: 'SONAR_TOKEN')]) {
                     bat """
-                    PYSONAR ^
-                      --sonar-host-url=%SONAR_HOST_URL% ^
-                      --sonar-token=%SONAR_TOKEN% ^
-                      --sonar-project-key=%SONAR_PROJECT_KEY%
+                    pysonar ^
+                      --sonar-host-url=http://localhost:9000
+                      --sonar-token=**** ^
+                      --sonar-project-key=sqp_ec5e02d219969d0e5efd6efcd154a129531c0597
                     """
                 }
             }
