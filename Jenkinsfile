@@ -30,7 +30,7 @@ pipeline {
             steps {
                 // Sólo verifica que el código Python compile
                 bat """
-                %PYTHON% -m compileall app.py
+                %PYTHON% -m compileall nttdata.py
                 """
             }
         }
