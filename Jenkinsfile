@@ -5,7 +5,7 @@ pipeline {
         // Ajusta si en tu agente se usa "py" en vez de "python"
         PYTHON  = "C:/Users/Luis/AppData/Local/Programs/Python/Python310/python.exe"
         PYSONAR = "C:/Users/Luis/AppData/Local/Programs/Python/Python310/Scripts/pysonar.exe"
-        SONAR_PROJECT_KEY = "qp_ec5e02d219969d0e5efd6efcd154a129531c0597"
+        SONAR_PROJECT_KEY = "sqp_ec5e02d219969d0e5efd6efcd154a129531c0597"
     }
 
     stages {
