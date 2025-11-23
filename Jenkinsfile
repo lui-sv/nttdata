@@ -3,9 +3,9 @@ pipeline {
 
     environment {
         // Ajusta si en tu agente se usa "py" en vez de "python"
-        PYTHON = "C:/Users/Luis/AppData/Local/Programs/Python/Python310/python.exe"
+        PYTHON = "C:\\Users\Luis\\AppData\\Local\\Programs\\Python\\Python310\\python.exe"
         SONAR_HOST_URL = "http://localhost:9000"
-        SONAR_PROJECT_KEY = "sqp_ec5e02d219969d0e5efd6efcd154a129531c0597"
+        SONAR_PROJECT_KEY = "qp_ec5e02d219969d0e5efd6efcd154a129531c0597"
     }
 
     stages {
@@ -30,7 +30,7 @@ pipeline {
             steps {
                 // Sólo verifica que el código Python compile
                 bat """
-                %PYTHON% -m compileall nttdata.py
+                %PYTHON% -m compileall app.py
                 """
             }
         }
@@ -39,7 +39,7 @@ pipeline {
             steps {
                 withCredentials([string(credentialsId: 'sonar-token', variable: 'SONAR_TOKEN')]) {
                     bat """
-                    nttdata ^
+                    pysonar ^
                       --sonar-host-url=%SONAR_HOST_URL% ^
                       --sonar-token=%SONAR_TOKEN% ^
                       --sonar-project-key=%SONAR_PROJECT_KEY%
